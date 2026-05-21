@@ -5,7 +5,7 @@
 
 // Use VITE_API_URL since this is a Vite project.
 // If it's not set, fallback to localhost for development.
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import { BASE_URL } from '../config';
 
 /**
  * Core API fetch wrapper that automatically handles JSON parsing and error throwing

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { BASE_URL } from '../config';
 import { BookOpen, Video, FileText, CheckCircle, Trash2, Plus, ChevronDown, ListPlus, Award, ShieldAlert, Sparkles, TrendingUp, AlertTriangle, Wand2, Loader2 } from 'lucide-react';
 
 const TeacherDashboard = () => {
@@ -56,7 +57,7 @@ const TeacherDashboard = () => {
   const fetchChapters = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/teacher/chapters', {
+      const res = await fetch(`${BASE_URL}/api/teacher/chapters`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -72,7 +73,7 @@ const TeacherDashboard = () => {
   const fetchQuizzes = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/teacher/quizzes', {
+      const res = await fetch(`${BASE_URL}/api/teacher/quizzes`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -88,7 +89,7 @@ const TeacherDashboard = () => {
   const fetchPerformance = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/teacher/performance', {
+      const res = await fetch(`${BASE_URL}/api/teacher/performance`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -109,7 +110,7 @@ const TeacherDashboard = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('/api/teacher/chapters', {
+      const res = await fetch(`${BASE_URL}/api/teacher/chapters`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -197,7 +198,7 @@ const TeacherDashboard = () => {
     }
 
     try {
-      const res = await fetch('/api/teacher/quizzes', {
+      const res = await fetch(`${BASE_URL}/api/teacher/quizzes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -236,7 +237,7 @@ const TeacherDashboard = () => {
     setAiMatchedTopic('');
 
     try {
-      const res = await fetch('/api/teacher/generate-quiz', {
+      const res = await fetch(`${BASE_URL}/api/teacher/generate-quiz`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -269,8 +270,8 @@ const TeacherDashboard = () => {
     setSuccess('');
 
     try {
-      const res = await fetch(`/api/teacher/chapters/${id}`, {
-        method: 'DELETE',
+      const res = await fetch(`${BASE_URL}/api/teacher/chapters/${id}`, {
+        method: `DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -288,8 +289,8 @@ const TeacherDashboard = () => {
     setSuccess('');
 
     try {
-      const res = await fetch(`/api/teacher/quizzes/${id}`, {
-        method: 'DELETE',
+      const res = await fetch(`${BASE_URL}/api/teacher/quizzes/${id}`, {
+        method: `DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();

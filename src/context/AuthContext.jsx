@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import { BASE_URL } from '../config';
 
 const AuthContext = createContext();
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -93,7 +93,7 @@ export const AuthProvider = ({ children }) => {
   // Profile update handler
   const updateProfile = async (profileData) => {
     try {
-      const res = await fetch('/api/student/profile', {
+      const res = await fetch(`${BASE_URL}/api/student/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
