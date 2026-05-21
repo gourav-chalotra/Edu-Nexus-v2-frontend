@@ -98,7 +98,7 @@ const AdminDashboard = () => {
     
     try {
       const res = await fetch(`${BASE_URL}/api/admin/teachers/${id}`, {
-        method: `DELETE',
+        method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
         },

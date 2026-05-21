@@ -262,7 +262,7 @@ const StudentDashboard = () => {
     setLoading(true);
     try {
       const res = await fetch(`${BASE_URL}/api/student/quizzes/${activeQuiz._id}/submit`, {
-        method: `POST',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,

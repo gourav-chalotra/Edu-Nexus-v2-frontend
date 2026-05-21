@@ -271,7 +271,7 @@ const TeacherDashboard = () => {
 
     try {
       const res = await fetch(`${BASE_URL}/api/teacher/chapters/${id}`, {
-        method: `DELETE',
+        method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -290,7 +290,7 @@ const TeacherDashboard = () => {
 
     try {
       const res = await fetch(`${BASE_URL}/api/teacher/quizzes/${id}`, {
-        method: `DELETE',
+        method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
