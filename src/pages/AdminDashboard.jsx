@@ -128,7 +128,7 @@ const AdminDashboard = () => {
       if (!res.ok) throw new Error(data.message);
       setPerformanceData(data);
     } catch (err) {
-      setError(err.message || `Failed to fetch class performance statistics.');
+      setError(err.message || 'Failed to fetch class performance statistics.');
     } finally {
       setLoading(false);
     }
