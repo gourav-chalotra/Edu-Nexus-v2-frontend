@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const AuthContext = createContext();
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -12,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     const fetchProfile = async () => {
       if (token) {
         try {
-          const res = await fetch('/api/auth/me', {
+          const res = await fetch(`${BASE_URL}/api/auth/me`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     setLoading(true);
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(`${BASE_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +67,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (name, email, password, classLevel, rollNo, phone) => {
     setLoading(true);
     try {
-      const res = await fetch('/api/auth/register-student', {
+      const res = await fetch(`${BASE_URL}/api/auth/register-student`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
