@@ -156,7 +156,7 @@ const StudentDashboard = () => {
       if (!qRes.ok) throw new Error(qData.message);
       setQuizzes(qData);
     } catch (err) {
-      setError(err.message || `Failed to fetch chapters & quizzes.');
+      setError(err.message || 'Failed to fetch chapters & quizzes.');
     } finally {
       setLoading(false);
     }
