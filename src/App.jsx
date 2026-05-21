@@ -6,6 +6,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 import Home from './pages/Home';
+import UsersExample from './pages/UsersExample';
 import { LogOut, BookOpen, User as UserIcon, Trophy, Sparkles } from 'lucide-react';
 
 // Header Navbar Component
@@ -232,6 +233,7 @@ const App = () => {
             />
             
             <Route path="/" element={<RootRedirect />} />
+            <Route path="/api-example" element={<UsersExample />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </div>
